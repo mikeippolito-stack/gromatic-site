@@ -29,7 +29,6 @@ const components = {
 export default function Page({ params }:{ params:{ slug:string } }){
   const raw = fs.readFileSync(path.join(process.cwd(), "content", "posts", `${params.slug}.mdx`), "utf-8");
   const { content, data } = matter(raw);
-  // @ts-expect-error Async Server Component
   const mdx = <MDXRemote source={content} components={components as any} />;
   return (
     <main className="min-h-screen">
