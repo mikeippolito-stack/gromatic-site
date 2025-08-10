@@ -1,1 +1,2 @@
-export default function Button({children}:{children:React.ReactNode}){return <button className='inline-flex items-center px-4 py-2 rounded-xl bg-[#2B7A3D] text-white hover:opacity-90'>{children}</button>}
+<Button color={GRN}>Choose plan</Button>
+<Button variant="outline" className="border" color={BLU}>See Automation in Action</Button>
