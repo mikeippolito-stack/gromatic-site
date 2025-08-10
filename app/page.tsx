@@ -165,4 +165,163 @@ export default function Page() {
           initial={{ opacity:0, y:20 }} 
           whileInView={{ opacity:1, y:0 }} 
           transition={{ duration:0.6 }} 
-          className=
+          className="relative w-full h-[360px] md:h-[420px] rounded-3xl shadow-xl border overflow-hidden" 
+          style={{ background: `linear-gradient(135deg, ${BLU} 0%, ${GRN} 100%)` }}
+        >
+          {[...Array(8)].map((_, i) => (
+            <motion.div 
+              key={i} 
+              className="absolute w-3 h-3 rounded-full bg-white" 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: [0.5, 1, 0.5] }} 
+              transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }} 
+              style={{ top: 40 + (i%4)*70, left: 40 + (i<4? i*90 : (7-i)*90) }} 
+            />
+          ))}
+          <svg className="absolute inset-0" viewBox="0 0 600 400" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="flow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#ffffff55" />
+                <stop offset="100%" stopColor="#ffffff05" />
+              </linearGradient>
+            </defs>
+            <path d="M40 80 C 220 40, 380 120, 560 60" stroke="url(#flow)" strokeWidth="3" fill="none" />
+            <path d="M40 220 C 220 260, 380 200, 560 260" stroke="url(#flow)" strokeWidth="3" fill="none" />
+            <path d="M40 300 C 220 340, 380 320, 560 320" stroke="url(#flow)" strokeWidth="3" fill="none" />
+          </svg>
+        </motion.div>
+      </Section>
+
+      <div className="py-10 border-y bg-slate-50">
+        <Section className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <Feature icon={LineChart} title="Lead growth" desc="More enquiries from search, ads & social." />
+          <Feature icon={Workflow} title="Automation" desc="Follow-ups & nurturing on autopilot." />
+          <Feature icon={ShieldCheck} title="Reliability" desc="Systems that quietly work 24/7." />
+          <Feature icon={Bolt} title="Speed" desc="Fast setup, fast results." />
+        </Section>
+      </div>
+
+      <Section id="how" className="py-16 md:py-20">
+        <div className="max-w-2xl">
+          <Pill>How it works</Pill>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold" style={{ color: BLU }}>The Growth Circuit Method</h2>
+          <p className="mt-3 text-slate-600">Five simple steps to install a growth system that captures, nurtures and converts — automatically.</p>
+        </div>
+        <div className="mt-10 grid md:grid-cols-5 gap-4">
+          <Step n={1} title="Audit" desc="Quick audit to find bottlenecks and missed leads." />
+          <Step n={2} title="Capture" desc="Fix tracking, forms & chat so every lead is caught." />
+          <Step n={3} title="Nurture" desc="Email/SMS sequences keep you top‑of‑mind." />
+          <Step n={4} title="Convert" desc="Bookings, reminders & offers drive action." />
+          <Step n={5} title="Optimise" desc="Monthly improvements based on real data." />
+        </div>
+      </Section>
+
+      <Section id="services" className="py-16 md:py-20">
+        <div className="max-w-2xl">
+          <Pill>Services</Pill>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold" style={{ color: BLU }}>Packages that scale with you</h2>
+          <p className="mt-3 text-slate-600">Start small or go all‑in. Every package installs your Growth Circuit with clear ROI.</p>
+        </div>
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          <ServiceCard title="Growth Circuit Starter" price="$1,200" bullets={["Lead capture & tracking","Google Business Profile tune‑up","Basic follow‑up sequence","Monthly report"]} />
+          <ServiceCard featured title="Growth Circuit Pro" price="$2,400" bullets={["Everything in Starter","CRM setup + pipelines","Ads management (Google/Meta)","Advanced email/SMS nurture"]} />
+          <ServiceCard title="Growth Circuit Enterprise" price="Custom" bullets={["Multi‑location & teams","Reputation management","AI lead qual & chat","BI dashboard & SLAs"]} />
+        </div>
+      </Section>
+
+      <Section id="cases" className="py-16 md:py-20">
+        <div className="max-w-2xl">
+          <Pill>Proof</Pill>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold" style={{ color: BLU }}>Before & After results</h2>
+        </div>
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          <Card className="rounded-2xl border shadow">
+            <CardContent className="p-6">
+              <div className="text-sm text-slate-600">Restaurant • 90 days</div>
+              <div className="mt-3 text-2xl font-bold" style={{ color: GRN }}>+42% bookings</div>
+              <p className="mt-2 text-sm text-slate-700">Automated reservation confirmations & review requests.</p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl border shadow">
+            <CardContent className="p-6">
+              <div className="text-sm text-slate-600">Electrician • 60 days</div>
+              <div className="mt-3 text-2xl font-bold" style={{ color: GRN }}>+57% enquiries</div>
+              <p className="mt-2 text-sm text-slate-700">Google ads + instant SMS follow‑ups to missed calls.</p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl border shadow">
+            <CardContent className="p-6">
+              <div className="text-sm text-slate-600">Real Estate • 120 days</div>
+              <div className="mt-3 text-2xl font-bold" style={{ color: GRN }}>3.1x appraisal leads</div>
+              <p className="mt-2 text-sm text-slate-700">Lead magnets + nurture sequences for homeowners.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </Section>
+
+      <Section id="about" className="py-16 md:py-20">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <Pill>About Gromatic</Pill>
+            <h2 className="mt-3 text-3xl md:text-4xl font-extrabold" style={{ color: BLU }}>Simple systems. Serious growth.</h2>
+            <p className="mt-3 text-slate-600">We combine marketing, automation and local market insight to install a Growth Circuit tailored to your business. Less busywork, more bookings and sales.</p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-700">
+              <li className="flex gap-2"><Sparkles color={GLD} /> Built for time‑poor owners</li>
+              <li className="flex gap-2"><ShieldCheck color={GRN} /> Transparent ROI reporting</li>
+              <li className="flex gap-2"><Workflow color={BLU} /> Works with your existing tools</li>
+            </ul>
+          </div>
+          <div className="rounded-3xl border shadow p-6 bg-white">
+            <div className="text-sm text-slate-600">What clients say</div>
+            <div className="mt-4 grid gap-4">
+              <Testimonial quote="We stopped chasing leads. The system just hums along and bookings keep coming." author="A. Taylor" role="Restaurant Owner" />
+              <Testimonial quote="Follow‑ups are automatic now — our team finally has its evenings back." author="J. Singh" role="Electrical Services" />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="contact" className="py-16 md:py-20">
+        <div className="max-w-2xl">
+          <Pill>Start here</Pill>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold" style={{ color: BLU }}>Book your free Growth Audit</h2>
+          <p className="mt-3 text-slate-600">Tell us a little about your business. We'll map your Growth Circuit and identify quick wins in under 30 minutes.</p>
+        </div>
+        <form className="mt-8 grid md:grid-cols-2 gap-4" name="contact">
+          <input name="name" required className="w-full border rounded-xl px-4 py-3 text-sm" placeholder="Full name" />
+          <input name="business" className="w-full border rounded-xl px-4 py-3 text-sm" placeholder="Business name" />
+          <input type="email" name="email" required className="w-full border rounded-xl px-4 py-3 text-sm" placeholder="Email" />
+          <input name="phone" className="w-full border rounded-xl px-4 py-3 text-sm" placeholder="Phone" />
+          <select name="service" className="w-full border rounded-xl px-4 py-3 text-sm md:col-span-2">
+            <option>Service of interest</option>
+            <option>Starter</option>
+            <option>Pro</option>
+            <option>Enterprise</option>
+          </select>
+          <textarea name="message" className="w-full border rounded-xl px-4 py-3 text-sm md:col-span-2" rows={4} placeholder="Tell us about your goals"></textarea>
+          <div className="md:col-span-2">
+            <Button className="w-full md:w-auto" color={GRN}>
+              Request my audit <ArrowRight className="ml-2" size={16} />
+            </Button>
+          </div>
+        </form>
+        <div className="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+          <div className="flex items-center gap-3"><Mail color={BLU} /> hello@gromatic.co</div>
+          <div className="flex items-center gap-3"><Phone color={BLU} /> (02) 8000 0000</div>
+          <div className="flex items-center gap-3"><MapPin color={BLU} /> Australia • Remote</div>
+        </div>
+      </Section>
+
+      <footer className="py-10 border-t bg-slate-50">
+        <Section className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-slate-600">© {new Date().getFullYear()} Gromatic. All rights reserved.</div>
+          <div className="flex items-center gap-4 text-sm">
+            <a className="hover:underline" href="/services">Services</a>
+            <a className="hover:underline" href="/case-studies">Case studies</a>
+            <a className="hover:underline" href="/contact">Contact</a>
+          </div>
+        </Section>
+      </footer>
+    </div>
+  );
+}
