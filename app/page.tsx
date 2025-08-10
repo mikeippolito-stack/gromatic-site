@@ -1,0 +1,2 @@
+import Section from '@/components/Section';
+export default function Page(){return(<main className='min-h-screen'><Section className='py-16'><h1 className='text-4xl font-extrabold text-slate-900'>Gromatic — Growth on Autopilot</h1><p className='mt-3 text-slate-600'>We install simple, automated growth systems for local businesses.</p></Section></main>)}

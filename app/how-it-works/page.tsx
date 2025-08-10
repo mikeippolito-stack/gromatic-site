@@ -1,0 +1,1 @@
+export default function Page(){return(<main className='min-h-screen'><div className='w-full max-w-5xl mx-auto px-4 md:px-8 py-16'><h1 className='text-3xl md:text-4xl font-extrabold text-slate-900'>How it works</h1><p className='mt-3 text-slate-600'>Content coming soon.</p></div></main>)}
