@@ -1,7 +1,40 @@
 import React from 'react';
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'solid'|'outline', color?: string };
-export default function Button({ variant='solid', color='#1E3A8A', className='', children, ...props }: Props){
-  const base = 'inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition';
-  const styles = variant==='outline' ? `border text-[${color}] border-[${color}] bg-white hover:opacity-80` : `bg-[${color}] text-white hover:opacity-90`;
-  return <button className={`${base} ${styles} ${className}`} {...props}>{children}</button>;
+
+interface ButtonProps {
+  children: React.ReactNode;
+  className?: string;
+  color?: string;
+  variant?: 'default' | 'outline';
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+export default function Button({ 
+  children, 
+  className = '', 
+  color = '#2B7A3D', 
+  variant = 'default',
+  onClick,
+  type = 'button'
+}: ButtonProps) {
+  const baseClasses = 'inline-flex items-center px-4 py-2 rounded-xl font-medium transition-all hover:opacity-90';
+  
+  const variantClasses = variant === 'outline' 
+    ? 'bg-transparent border-2 hover:bg-opacity-10' 
+    : 'text-white';
+
+  const style = variant === 'outline' 
+    ? { borderColor: color, color: color }
+    : { backgroundColor: color };
+
+  return (
+    <button 
+      type={type}
+      className={`${baseClasses} ${variantClasses} ${className}`}
+      style={style}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 }
