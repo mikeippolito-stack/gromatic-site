@@ -3,17 +3,51 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --gromatic-green: #2B7A3D;
+    --automation-blue: #1E3A8A;
+    --success-gold: #F59E0B;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   
   body {
     @apply text-slate-900;
+    background: #fff;
+  }
+}
+
+@layer components {
+  .text-gromatic-green { 
+    color: var(--gromatic-green); 
+  }
+  
+  .text-automation-blue { 
+    color: var(--automation-blue); 
+  }
+  
+  .bg-gromatic-green { 
+    background-color: var(--gromatic-green); 
+  }
+  
+  .bg-automation-blue { 
+    background-color: var(--automation-blue); 
+  }
+  
+  .border-gromatic-green { 
+    border-color: var(--gromatic-green); 
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .prose img {
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
   }
 }
