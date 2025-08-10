@@ -15,7 +15,6 @@ export default function Header() {
           <a href="/how-it-works" className="hover:text-gromatic-green transition-colors">How it works</a>
           <a href="/services" className="hover:text-gromatic-green transition-colors">Services</a>
           <a href="/case-studies" className="hover:text-gromatic-green transition-colors">Case studies</a>
-          <a href="/about" className="hover:text-gromatic-green transition-colors">About</a>
           <a href="/contact" className="hover:text-gromatic-green transition-colors">Contact</a>
         </nav>
         
@@ -59,7 +58,6 @@ export default function Header() {
                 <a href="/services/ai-seo" onClick={() => setOpen(false)} className="block py-1 text-sm text-slate-600 hover:text-gromatic-green transition-colors">— AI SEO</a>
               </div>
               <a href="/case-studies" onClick={() => setOpen(false)} className="block py-2 text-slate-800 hover:text-gromatic-green transition-colors">Case studies</a>
-              <a href="/about" onClick={() => setOpen(false)} className="block py-2 text-slate-800 hover:text-gromatic-green transition-colors">About</a>
               <a href="/contact" 
                 onClick={() => setOpen(false)} 
                 className="mt-4 block text-center rounded-xl bg-gromatic-green text-white px-4 py-3 font-medium hover:opacity-90 transition-opacity"
