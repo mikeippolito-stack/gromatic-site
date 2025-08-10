@@ -23,9 +23,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <form className="space-y-6" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact" />
-                
+              <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
@@ -36,7 +34,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                       placeholder="Your full name"
                     />
                   </div>
@@ -48,7 +46,7 @@ export default function ContactPage() {
                       type="text"
                       id="business"
                       name="business"
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                       placeholder="Your business name"
                     />
                   </div>
@@ -64,7 +62,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -76,7 +74,7 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                       placeholder="+61 xxx xxx xxx"
                     />
                   </div>
@@ -89,14 +87,13 @@ export default function ContactPage() {
                   <select
                     id="service"
                     name="service"
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                   >
                     <option value="">Select a service</option>
                     <option value="growth-circuit-starter">Growth Circuit Starter</option>
                     <option value="growth-circuit-pro">Growth Circuit Pro</option>
-                    <option value="growth-circuit-enterprise">Growth Circuit Enterprise</option>
                     <option value="google-ads">Google Ads Management</option>
-                    <option value="seo">SEO Services</option>
+                    <option value="seo">Local SEO Services</option>
                     <option value="ai-seo">AI SEO</option>
                   </select>
                 </div>
@@ -109,14 +106,14 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gromatic-green focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#2B7A3D] focus:border-transparent"
                     placeholder="What challenges are you facing with lead generation and follow-up?"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gromatic-green text-white py-4 px-6 rounded-xl font-semibold hover:opacity-90 transition-opacity"
+                  className="w-full bg-[#2B7A3D] text-white py-4 px-6 rounded-xl font-semibold hover:opacity-90 transition-opacity"
                 >
                   Request My Free Audit
                 </button>
@@ -129,21 +126,21 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-slate-900 mb-4">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="text-automation-blue shrink-0" size={20} />
+                    <Mail className="text-[#1E3A8A] shrink-0" size={20} />
                     <div>
                       <div className="font-medium text-slate-900">Email</div>
                       <div className="text-slate-600">hello@gromatic.co</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="text-automation-blue shrink-0" size={20} />
+                    <Phone className="text-[#1E3A8A] shrink-0" size={20} />
                     <div>
                       <div className="font-medium text-slate-900">Phone</div>
                       <div className="text-slate-600">(02) 8000 0000</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="text-automation-blue shrink-0" size={20} />
+                    <MapPin className="text-[#1E3A8A] shrink-0" size={20} />
                     <div>
                       <div className="font-medium text-slate-900">Location</div>
                       <div className="text-slate-600">Australia • Remote</div>
@@ -152,7 +149,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-gromatic-green rounded-xl p-6 text-white">
+              <div className="bg-[#2B7A3D] rounded-xl p-6 text-white">
                 <h3 className="font-semibold mb-3">What to Expect</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• 30-minute strategy session</li>
