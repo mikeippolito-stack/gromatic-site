@@ -18,22 +18,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gromatic — Growth on Autopilot',
-    description: 'Automation-powered growth systems for local businesses.',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 
